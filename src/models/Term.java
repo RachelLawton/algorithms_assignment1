@@ -3,9 +3,10 @@ package models;
 public class Term {
 	
 	private String name;//attributes
-	private long weight;
+	private double weight;
+	private String text;
 	
-	public Term(String name, long weight) 
+	public Term(String name, double weight) 
 	{
 		super();
 		this.name = name;
@@ -17,9 +18,14 @@ public class Term {
 		return name;
 	}
 	
-	public long getWeight() 
+	public double getWeight() 
 	{
 		return weight;
 	}
+	
+	/*public String getText()
+	{
+		return text;
+	*/}
 
-}
+
