@@ -11,9 +11,9 @@ public class WordReader {
 	private List<String> words;
 
 	public static List<Term> terms = new ArrayList<Term>();
-	
-	public WordReader () throws IOException{
-		
+
+	public WordReader() throws IOException {
+
 		readWords();
 	}
 

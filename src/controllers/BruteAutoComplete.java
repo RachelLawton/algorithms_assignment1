@@ -10,7 +10,7 @@ import models.WordReader;
 
 public class BruteAutoComplete implements AutoComplete {
 
-	public List<String> filtered; 
+	public List<String> filtered;
 	WordReader words;
 
 	public BruteAutoComplete() throws IOException {
@@ -29,26 +29,20 @@ public class BruteAutoComplete implements AutoComplete {
 	}
 
 	@Override
-	public String bestMatch(String prefix) 
-	{
-		for(Term t: WordReader.terms)
-			
-				{	
-						if(t.getName().startsWith(prefix))
-						{
-							return t.getName();
-						}
-				}
-			return null;
+	public String bestMatch(String prefix) {
+		for (Term t : WordReader.terms)
 
+		{
+			if (t.getName().startsWith(prefix)) {
+				return t.getName();
 			}
-		
-		
-		
+		}
+		return null;
+
+	}
 
 	@Override
-	public Iterable<String> matches(String prefix, int k) 
-	{
+	public Iterable<String> matches(String prefix, int k) {
 		filtered = new ArrayList<String>();
 		for (Term t : WordReader.terms) {
 			if (t.getName().startsWith(prefix) && filtered.size() < k) {
