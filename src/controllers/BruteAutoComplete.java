@@ -10,7 +10,7 @@ import models.WordReader;
 
 public class BruteAutoComplete implements AutoComplete {
 
-	public List<String> filtered;
+	public List<String> filtered;//new arraylist filtered
 	WordReader words;
 
 	public BruteAutoComplete() throws IOException {
@@ -20,9 +20,9 @@ public class BruteAutoComplete implements AutoComplete {
 	@Override
 	public double weightOf(String term) {
 
-		for (int i = 0; i < WordReader.terms.size(); i++) {
-			if (term.equals(WordReader.terms.get(i).getName())) {
-				return WordReader.terms.get(i).getWeight();
+		for (int i = 0; i < WordReader.terms.size(); i++) {//getting the weights of the terms
+			if (term.equals(WordReader.terms.get(i).getName())) {//if the the term equals i then get name
+				return WordReader.terms.get(i).getWeight();//return name and weight
 			}
 		}
 		return 0;
@@ -33,8 +33,8 @@ public class BruteAutoComplete implements AutoComplete {
 		for (Term t : WordReader.terms)
 
 		{
-			if (t.getName().startsWith(prefix)) {
-				return t.getName();
+			if (t.getName().startsWith(prefix)) {//if name starts with prefix added 
+				return t.getName();//return name
 			}
 		}
 		return null;
@@ -45,13 +45,13 @@ public class BruteAutoComplete implements AutoComplete {
 	public Iterable<String> matches(String prefix, int k) {
 		filtered = new ArrayList<String>();
 		for (Term t : WordReader.terms) {
-			if (t.getName().startsWith(prefix) && filtered.size() < k) {
-				filtered.add(t.getName());
+			if (t.getName().startsWith(prefix) && filtered.size() < k) {//if name starts with prefix added and is lower or equal to k(options available)
+				filtered.add(t.getName());//its added to arraylost filtered
 
 			}
 		}
 
-		return filtered;
+		return filtered;//return the arrylist
 	}
 
 }

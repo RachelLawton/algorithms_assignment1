@@ -30,7 +30,7 @@ public class Main {
 	private int mainMenu() 
 	{
 	
-	
+	//creates main menu
 	    System.out.println("---------");   
 	    System.out.println("  1) BruteForce AutoComplete");   
 	    System.out.println("---------");   
@@ -41,7 +41,7 @@ public class Main {
 		
 	}
 	
-	
+	//runs the menu
 	private void runMenu() throws IOException
 	 {
 		 int option = 0;
@@ -51,7 +51,7 @@ public class Main {
 	    	    
 	    	   switch (option)
 	           {
-	              case 1:    runBruteForce();
+	              case 1:    runBruteForce();//runs the bruteforce method
 	            	  		    break;           
 	             default:    System.out.println("Invalid number Inserted: " + option);
 	                         break;
@@ -60,7 +60,7 @@ public class Main {
 	       (option != 0);
 	   }
 	
-	private void runBruteForce() throws IOException {
+	private void runBruteForce() throws IOException {//brute autocomplete method taken from bruteautocomplete class
 		
 		
 		if (bruteForce != true);

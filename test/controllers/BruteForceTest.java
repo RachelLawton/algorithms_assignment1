@@ -27,14 +27,14 @@ public class BruteForceTest {
 	{
 		BruteForce = new BruteAutoComplete();
 		Words = new WordReader();
-		filtered = new ArrayList<String>();
+		filtered = new ArrayList<String>();//creates a arraylist with the first 6 terms of ra
 		filtered.add(Words.terms.get(262).getName());
 		filtered.add(Words.terms.get(611).getName());
 		filtered.add(Words.terms.get(717).getName());
 		filtered.add(Words.terms.get(856).getName());
 		filtered.add(Words.terms.get(1124).getName());
 		filtered.add(Words.terms.get(1257).getName());
-		filtered2 = new ArrayList<String>();
+		filtered2 = new ArrayList<String>();//creates a arraylist with the first 6 terms of do
 		filtered2.add(Words.terms.get(56).getName());
 		filtered2.add(Words.terms.get(94).getName());
 		filtered2.add(Words.terms.get(200).getName());
@@ -43,11 +43,9 @@ public class BruteForceTest {
 		filtered2.add(Words.terms.get(429).getName());
 		
 	}
-	
-	
-	
+
 	@Test 
-	public void weightOf()
+	public void weightOf()//test the weight of the terms 
 	{
 		assertEquals(1276970,  BruteForce.weightOf("rachel"), 0.01);
 		assertEquals(24413800, BruteForce.weightOf("law"), 0.01);
@@ -58,7 +56,7 @@ public class BruteForceTest {
 	}
 	
 	@Test 
-	public void bestMatch()
+	public void bestMatch()//test the best match term
 	{
 		assertEquals (Words.terms.get(262).getName(),BruteForce.bestMatch("ra"));
 		assertEquals (Words.terms.get(56).getName(),BruteForce.bestMatch("do"));
@@ -71,13 +69,13 @@ public class BruteForceTest {
 	@Test 
 	public void matches()
 	{
-		assertEquals(filtered, BruteForce.matches("ra",6));
+		assertEquals(filtered, BruteForce.matches("ra",6));//testing the arraylist created above
 		assertEquals(filtered2, BruteForce.matches("do",6));
 		
 	}
 	
 	@After
-	public void tearDown()
+	public void tearDown()//tearsdown program
 	{
 		BruteForce = null;
 	}
