@@ -19,9 +19,9 @@ public class WordReaderTest {
 	private Term term255;
 	private Term term947;
 	private Term term994;
+	
+	
 	@Before
-	
-	
 	public void setUp() throws IOException 
 	{
 		WordTest = new WordReaderTest();
@@ -32,10 +32,7 @@ public class WordReaderTest {
 	    term255= new Term("Gutenberg",32832400);
 	    term947 = new Term("ladies",8291800);
 	    term994 = new Term("roman",7948210);
-	    
 	}
-
-	
 	
 	@Test
 	public void readWords() {
@@ -51,8 +48,6 @@ public class WordReaderTest {
 		assertEquals(Words.terms.get(947).getName(),term947.getName());
 		assertEquals(Words.terms.get(994).getWeight(),term994.getWeight(),0.01);
 		assertEquals(Words.terms.get(994).getName(),term994.getName());
-		
-		
 	}
 
 }

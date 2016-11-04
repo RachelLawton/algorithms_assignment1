@@ -18,9 +18,6 @@ public class BruteForceTest {
 	private WordReader Words;
 	private ArrayList<String> filtered;
 	private ArrayList<String> filtered2;
-
-	
-	
 	
 	@Before
 	public void setUp() throws IOException 
